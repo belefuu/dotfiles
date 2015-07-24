@@ -10,3 +10,18 @@ zstyle :compinstall filename '/home/jolyna/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
+export PATH=/home/jolyna/bin:/usr/src/node/bin:/usr/src/git/bin:$PATH
+export EDITOR='vim'
+
+source ~/.dotfiles/antigen/antigen.zsh
+
+antigen use oh-my-zsh
+
+antigen bundle git
+
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+antigen theme robbyrussell
+
+antigen apply
