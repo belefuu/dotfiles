@@ -31,3 +31,8 @@ source ~/.zsh/aliases.zsh
 
 # Plugins
 source ~/.zsh/plugins.zsh
+
+# Keybindings
+
+bindkey '\e[1~' beginning-of-line
+bindkey '\e[4~' end-of-line
