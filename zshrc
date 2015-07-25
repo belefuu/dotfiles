@@ -22,6 +22,9 @@ antigen bundle git
 
 antigen bundle zsh-users/zsh-syntax-highlighting
 
-antigen theme robbyrussell
+antigen theme candy
 
 antigen apply
+
+# Aliases
+source ~/.zsh/aliases.zsh

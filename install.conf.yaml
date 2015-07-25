@@ -17,6 +17,9 @@
     ~/.bashrc:
         path: bashrc
         force: true
+    ~/.zsh:
+        path: zsh/
+        force: true
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
