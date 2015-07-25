@@ -18,9 +18,9 @@ source ~/.dotfiles/antigen/antigen.zsh
 
 antigen use oh-my-zsh
 
-antigen bundle git
-
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle sigurdga/ls-colors-solarized
+antigen bundle extract
 
 antigen theme candy
 
@@ -28,3 +28,6 @@ antigen apply
 
 # Aliases
 source ~/.zsh/aliases.zsh
+
+# Plugins
+source ~/.zsh/plugins.zsh
