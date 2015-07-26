@@ -21,6 +21,8 @@ antigen use oh-my-zsh
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle sigurdga/ls-colors-solarized
 antigen bundle extract
+antigen bundle git-extras
+antigen bundle rupa/z
 
 antigen theme candy
 
@@ -34,5 +36,20 @@ source ~/.zsh/plugins.zsh
 
 # Keybindings
 
+bindkey -v
+
 bindkey '\e[1~' beginning-of-line
 bindkey '\e[4~' end-of-line
+
+# Add vi [NORMAL] mode indicator to right prompt
+
+function zle-line-init zle-keymap-select {
+    VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]%  %{$reset_color%}"
+    RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $EPS1"
+    zle reset-prompt
+}
+
+zle -N zle-line-init
+zle -N zle-keymap-select
+export KEYTIMEOUT=1
+
