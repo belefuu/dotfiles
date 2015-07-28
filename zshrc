@@ -2,7 +2,6 @@
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/jolyna/.zshrc'
@@ -13,6 +12,7 @@ compinit
 
 export PATH=/home/jolyna/bin:/usr/src/node/bin:/usr/src/git/bin:$PATH
 export EDITOR='vim'
+export MANPATH=~/share/man:$MANPATH
 
 source ~/.dotfiles/antigen/antigen.zsh
 

@@ -1,20 +1,3 @@
-
-" An example for a vimrc file.
-"
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last change:	2008 Jul 02
-"
-" To use it, copy it to
-"     for Unix and OS/2:  ~/.vimrc
-"	      for Amiga:  s:.vimrc
-"  for MS-DOS and Win32:  $VIM\_vimrc
-"	    for OpenVMS:  sys$login:.vimrc
-
-" When started as "evim", evim.vim will already have done these settings.
-if v:progname =~? "evim"
-  finish
-endif
-
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
@@ -24,16 +7,22 @@ set backspace=indent,eol,start
 
 set backupdir=~/.vim/backup
 
-set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
-
-" For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
-" let &guioptions = substitute(&guioptions, "t", "", "g")
-
-" Don't use Ex mode, use Q for formatting
-map Q gq
+set history=8192 " keep 50 lines of command line history
+set ruler " show the cursor position all the time
+set showcmd " display incomplete commands
+set incsearch " do incremental searching
+set nu " number lines
+" use 4 spaces instead of tabs during formatting
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+" smart case-sensitive search
+set ignorecase
+set smartcase
+" tab completion for files/bufferss
+set wildmode=longest,list
+set wildmenu
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
