@@ -12,14 +12,18 @@ set ruler " show the cursor position all the time
 set showcmd " display incomplete commands
 set incsearch " do incremental searching
 set nu " number lines
+set hidden " no warning when switching away from hidden buffer
+
 " use 4 spaces instead of tabs during formatting
 set expandtab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
+
 " smart case-sensitive search
 set ignorecase
 set smartcase
+
 " tab completion for files/bufferss
 set wildmode=longest,list
 set wildmenu

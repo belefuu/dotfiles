@@ -1,52 +1,14 @@
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/jolyna/.zshrc'
+# Initialize completion
+autoload -Uz compinit && compinit
 
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
-
-export PATH=/home/jolyna/bin:/usr/src/node/bin:/usr/src/git/bin:$PATH
-export EDITOR='vim'
-export MANPATH=~/share/man:$MANPATH
-
-source ~/.dotfiles/antigen/antigen.zsh
-
-antigen use oh-my-zsh
-
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle sigurdga/ls-colors-solarized
-antigen bundle extract
-antigen bundle git-extras
-antigen bundle rupa/z
-
-antigen theme candy
-
-antigen apply
+# Settings
+source ~/.zsh/settings.zsh
 
 # Aliases
 source ~/.zsh/aliases.zsh
 
 # Plugins
 source ~/.zsh/plugins.zsh
-
-# Keybindings
-
-bindkey -v
-
-bindkey '\e[1~' beginning-of-line
-bindkey '\e[4~' end-of-line
-
-autoload -U up-line-or-beginning-search
-autoload -U down-line-or-beginning-search
-zle -N up-line-or-beginning-search
-zle -N down-line-or-beginning-search
-bindkey "^[[A" up-line-or-beginning-search # Up
-bindkey "^[[B" down-line-or-beginning-search # Down
 
 # Add vi [NORMAL] mode indicator to right prompt
 
@@ -58,5 +20,3 @@ function zle-line-init zle-keymap-select {
 
 zle -N zle-line-init
 zle -N zle-keymap-select
-export KEYTIMEOUT=1
-
