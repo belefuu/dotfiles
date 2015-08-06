@@ -1,14 +1,14 @@
 # Initialize completion
 autoload -Uz compinit && compinit
 
+# Plugins
+source ~/.zsh/plugins.zsh
+
 # Settings
 source ~/.zsh/settings.zsh
 
 # Aliases
 source ~/.zsh/aliases.zsh
-
-# Plugins
-source ~/.zsh/plugins.zsh
 
 # Add vi [NORMAL] mode indicator to right prompt
 
