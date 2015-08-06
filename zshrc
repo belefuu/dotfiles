@@ -1,6 +1,20 @@
 # Initialize completion
 autoload -Uz compinit && compinit
 
+# Env variables
+
+export PATH=$HOME/bin:/usr/src/node/bin:/usr/src/git/bin:$PATH
+export EDITOR='vim'
+export MANPATH=$HOME/share/man:$MANPATH
+export KEYTIMEOUT=1
+
+# OS dependent env variables
+
+if [[ $(uname) == 'Darwin' ]]; then
+    export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
+    export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
+fi
+
 # Plugins
 source ~/.zsh/plugins.zsh
 

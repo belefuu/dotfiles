@@ -1,2 +1,5 @@
 # Dotbot install script
 install
+
+# Vim .swp files
+*.swp
