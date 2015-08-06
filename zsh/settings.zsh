@@ -1,15 +1,22 @@
 # History
 
-HISTFILE=~/.histfile
+HISTFILE=$HOME/.histfile
 HISTSIZE=1048576
 SAVEHIST=$HISTSIZE
 
 # Env variables
 
-export PATH=/home/jolyna/bin:/usr/src/node/bin:/usr/src/git/bin:$PATH
+export PATH=$HOME/bin:/usr/src/node/bin:/usr/src/git/bin:$PATH
 export EDITOR='vim'
-export MANPATH=~/share/man:$MANPATH
+export MANPATH=$HOME/share/man:$MANPATH
 export KEYTIMEOUT=1
+
+# OS dependent env variables
+
+if [[ $(uname) == 'Darwin' ]]; then
+    export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
+    export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
+fi
 
 # Keybindings
 
@@ -24,4 +31,3 @@ zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
-
