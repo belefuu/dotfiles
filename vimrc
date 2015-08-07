@@ -5,9 +5,11 @@ set nocompatible
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-set backupdir=~/.vim/backup
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
+set undodir=~/.vim/undo//
 
-set history=8192 " keep 50 lines of command line history
+set history=8192
 set ruler " show the cursor position all the time
 set showcmd " display incomplete commands
 set incsearch " do incremental searching
