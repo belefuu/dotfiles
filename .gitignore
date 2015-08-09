@@ -3,3 +3,6 @@ install
 
 # Vim .swp files
 *.swp
+
+# Mac debris
+.DS_Store

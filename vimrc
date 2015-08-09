@@ -1,58 +1,12 @@
-" Use Vim settings, rather then Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
-set nocompatible
-
-" allow backspacing over everything in insert mode
-set backspace=indent,eol,start
-
-set backupdir=~/.vim/backup//
-set directory=~/.vim/swap//
-set undodir=~/.vim/undo//
-
-set history=8192
-set ruler " show the cursor position all the time
-set showcmd " display incomplete commands
-set incsearch " do incremental searching
-set nu " number lines
-set hidden " no warning when switching away from hidden buffer
-
-" use 4 spaces instead of tabs during formatting
-set expandtab
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-
-" smart case-sensitive search
-set ignorecase
-set smartcase
-
-" tab completion for files/bufferss
-set wildmode=longest,list
-set wildmenu
-
-" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
-" so that you can undo CTRL-U after inserting a line break.
-inoremap <C-U> <C-G>u<C-U>
-
-" In many terminal emulators the mouse works just fine, thus enable it.
-if has('mouse')
-  set mouse=a
-endif
-
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if &t_Co > 2 || has("gui_running")
-  syntax on
-  set hlsearch
-endif
+" Setup Pathogen
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect()
+syntax enable
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
 
   " Enable file type detection.
-  " Use the default filetype settings, so that mail gets 'tw' set to 72,
-  " 'cindent' is on in C files, etc.
-  " Also load indent files, to automatically do language-dependent indenting.
   filetype plugin indent on
 
   " Put these in an autocmd group, so that we can delete them easily.
@@ -79,6 +33,52 @@ else
   set autoindent		" always set autoindenting on
 
 endif " has("autocmd")
+
+
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
+set undodir=~/.vim/undo//
+
+set history=8192 " make history bigger
+set ruler " show the cursor position all the time
+set showcmd " display incomplete commands
+set incsearch " do incremental searching
+set nu " number lines
+set hidden " no warning when switching away from hidden buffer
+
+" use 4 spaces instead of tabs during formatting
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+
+" smart case-sensitive search
+set ignorecase
+set smartcase
+
+" tab completion for files/bufferss
+set wildmode=longest,list
+set wildmenu
+
+" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
+" so that you can undo CTRL-U after inserting a line break.
+inoremap <C-U> <C-G>u<C-U>
+
+set mouse=a
+set hlsearch
+
+" Show tabs and eols
+set list
+set listchars=tab:▸\ ,eol:¬,space:.
+
+" Colors
+set background=dark
+let g:solarized_visibility="low"
+let g:solarized_termcolors=256
+colorscheme solarized
 
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.

@@ -5,6 +5,9 @@
     ~/.vimrc:
         path: vimrc
         force: true
+    ~/.vim:
+        path: vim
+        force: true
     ~/.zshrc:
         path: zshrc
         force: true
@@ -29,7 +32,4 @@
         create: true
 
 - shell:
-    - [mkdir -p ~/.vim/backup, Create Vim backup dir]
-    - [mkdir -p ~/.vim/swap, Create Vim swap dir]
-    - [mkdir -p ~/.vim/undo, Create Vim undo dir]
     - [git submodule update --init --recursive, Installing submodules]
