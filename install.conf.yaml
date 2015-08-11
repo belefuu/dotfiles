@@ -14,6 +14,9 @@
     ~/.gitconfig:
         path: gitconfig
         force: true
+    ~/.gitignore_global:
+        path: gitignore_global
+        force: true
     ~/.bash_profile:
         path: bash_profile
         force: true

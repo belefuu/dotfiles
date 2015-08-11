@@ -16,7 +16,7 @@
 
 	st = status -sb
 [merge]
-        tool = p4merge
+        tool = vimdif
         renormalize = true
 [mergetool]
         keepBackup = false
@@ -24,4 +24,5 @@
         eol = lf
         autocrlf = input
         filemode = false
-	editor = vim
+        editor = vim
+        excludesfile = ~/.gitignore_global

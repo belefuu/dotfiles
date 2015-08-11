@@ -7,6 +7,8 @@ export PATH=$HOME/bin:/usr/src/node/bin:/usr/src/git/bin:$PATH
 export EDITOR='vim'
 export MANPATH=$HOME/share/man:$MANPATH
 export KEYTIMEOUT=1
+export FZF_DEFAULT_COMMAND='ag -l -g ""'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # OS dependent env variables
 
@@ -37,3 +39,6 @@ function zle-line-init zle-keymap-select {
 
 zle -N zle-line-init
 zle -N zle-keymap-select
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

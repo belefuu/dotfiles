@@ -48,6 +48,7 @@ set showcmd " display incomplete commands
 set incsearch " do incremental searching
 set nu " number lines
 set hidden " no warning when switching away from hidden buffer
+set formatoptions-=o " don't continue comments when pushing o/O
 
 " use 4 spaces instead of tabs during formatting
 set expandtab
@@ -94,6 +95,20 @@ let g:javascript_conceal_prototype="¶"
 let g:javascript_conceal_static="•"
 let g:javascript_conceal_super="Ω"
 
+" Syntastic config
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_loc_list_height = 5
+
+" Always show statusline
+set laststatus=2
+
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
 " Only define it when not defined already.
@@ -101,3 +116,23 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 		  \ | wincmd p | diffthis
 endif
+
+" fzf buffer browser
+" List of buffers
+function! s:buflist()
+  redir => ls
+  silent ls
+  redir END
+  return split(ls, '\n')
+endfunction
+
+function! s:bufopen(e)
+  execute 'buffer' matchstr(a:e, '^[ 0-9]*')
+endfunction
+
+nnoremap <silent> <Leader>b :call fzf#run({
+\   'source':  reverse(<sid>buflist()),
+\   'sink':    function('<sid>bufopen'),
+\   'options': '+m',
+\   'down':    len(<sid>buflist()) + 2
+\ })<CR>
