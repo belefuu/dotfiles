@@ -49,6 +49,8 @@ set incsearch " do incremental searching
 set nu " number lines
 set hidden " no warning when switching away from hidden buffer
 set formatoptions-=o " don't continue comments when pushing o/O
+set timeoutlen=1000
+set ttimeoutlen=10
 
 " use 4 spaces instead of tabs during formatting
 set expandtab
@@ -106,6 +108,9 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_loc_list_height = 5
 
+let mapleader = ' '
+let maplocalleader = ' '
+
 " Always show statusline
 set laststatus=2
 
@@ -136,3 +141,8 @@ nnoremap <silent> <Leader>b :call fzf#run({
 \   'options': '+m',
 \   'down':    len(<sid>buflist()) + 2
 \ })<CR>
+
+nnoremap <silent> <Leader>f :FZF -m<CR>
+
+" vim-airline config
+let g:airline_powerline_fonts = 1
