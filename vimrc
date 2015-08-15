@@ -51,6 +51,8 @@ set hidden " no warning when switching away from hidden buffer
 set formatoptions-=o " don't continue comments when pushing o/O
 set timeoutlen=1000
 set ttimeoutlen=10
+set updatetime=750
+set scrolloff=999 " keep cursor centered vertically
 
 " use 4 spaces instead of tabs during formatting
 set expandtab
@@ -71,6 +73,10 @@ set wildmenu
 inoremap <C-U> <C-G>u<C-U>
 
 set mouse=a
+if &term =~ '^screen'
+    " tmux knows the extended mouse mode
+    set ttymouse=xterm2
+endif
 set hlsearch
 
 " Show tabs and eols
@@ -146,3 +152,7 @@ nnoremap <silent> <Leader>f :FZF -m<CR>
 
 " vim-airline config
 let g:airline_powerline_fonts = 1
+
+" delimitMate config
+let g:delimitMate_expand_cr = 2
+let g:delimitMate_expand_space = 1

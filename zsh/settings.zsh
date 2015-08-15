@@ -10,6 +10,7 @@ bindkey -v
 
 bindkey '\e[1~' beginning-of-line
 bindkey '\e[4~' end-of-line
+bindkey '^[[3~' delete-char
 
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
