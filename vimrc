@@ -53,6 +53,7 @@ set timeoutlen=1000
 set ttimeoutlen=10
 set updatetime=750
 set scrolloff=999 " keep cursor centered vertically
+set cursorcolumn
 
 " use 4 spaces instead of tabs during formatting
 set expandtab
@@ -128,27 +129,11 @@ if !exists(":DiffOrig")
 		  \ | wincmd p | diffthis
 endif
 
-" fzf buffer browser
-" List of buffers
-function! s:buflist()
-  redir => ls
-  silent ls
-  redir END
-  return split(ls, '\n')
-endfunction
-
-function! s:bufopen(e)
-  execute 'buffer' matchstr(a:e, '^[ 0-9]*')
-endfunction
-
-nnoremap <silent> <Leader>b :call fzf#run({
-\   'source':  reverse(<sid>buflist()),
-\   'sink':    function('<sid>bufopen'),
-\   'options': '+m',
-\   'down':    len(<sid>buflist()) + 2
-\ })<CR>
-
-nnoremap <silent> <Leader>f :FZF -m<CR>
+" fzf config
+nnoremap <silent> <Leader>b :Buffers<CR>
+nnoremap <silent> <Leader>f :Files<CR>
+nnoremap <silent> <Leader>h :History<CR>
+nnoremap <silent> <Leader>a :Ag<CR>
 
 " vim-airline config
 let g:airline_powerline_fonts = 1
@@ -156,3 +141,16 @@ let g:airline_powerline_fonts = 1
 " delimitMate config
 let g:delimitMate_expand_cr = 2
 let g:delimitMate_expand_space = 1
+
+" vim-fugitive config
+nnoremap <silent> <Leader>gs :Gstatus<CR>
+nnoremap <silent> <Leader>gl :Glog<CR>
+nnoremap <silent> <Leader>ge :Gedit<CR>
+nnoremap <silent> <Leader>gc :Gcommit<CR>
+nnoremap <silent> <Leader>gp :Gpull<CR>
+nnoremap <silent> <Leader>gf :Gfetch<CR>
+nnoremap <silent> <Leader>gs :Gstatus<CR>
+nnoremap <silent> <Leader>gr :Gread<CR>
+nnoremap <silent> <Leader>gw :Gwrite<CR>
+nnoremap <silent> <Leader>gd :Gdiff<CR>
+nnoremap <silent> <Leader>gb :Gblame<CR>
