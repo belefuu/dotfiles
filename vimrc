@@ -53,7 +53,7 @@ set timeoutlen=1000
 set ttimeoutlen=10
 set updatetime=750
 set scrolloff=999 " keep cursor centered vertically
-set cursorcolumn
+set diffopt=vertical,filler
 
 " use 4 spaces instead of tabs during formatting
 set expandtab
