@@ -2,6 +2,9 @@
 
 - link:
     ~/.dotfiles: ''
+    ~/.jshintrc:
+        path: jshintrc
+        force: true
     ~/.vimrc:
         path: vimrc
         force: true

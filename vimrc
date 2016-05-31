@@ -137,6 +137,9 @@ nnoremap <silent> <Leader>a :Ag<CR>
 
 " vim-airline config
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#branch#displayed_head_limit = 15
+let g:airline_section_error = ''
+let g:airline_section_warning = ''
 
 " delimitMate config
 let g:delimitMate_expand_cr = 2
@@ -154,3 +157,14 @@ nnoremap <silent> <Leader>gr :Gread<CR>
 nnoremap <silent> <Leader>gw :Gwrite<CR>
 nnoremap <silent> <Leader>gd :Gdiff<CR>
 nnoremap <silent> <Leader>gb :Gblame<CR>
+
+" vim-bufsurf config
+nnoremap <silent> <Leader>[ :BufSurfBack<CR>
+nnoremap <silent> <Leader>] :BufSurfForward<CR>
+nnoremap <silent> <Leader>l :BufSurfList<CR>
+
+" make window nav easier
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l

@@ -18,6 +18,7 @@ if [[ $(uname) == 'Darwin' ]]; then
     export PATH=/usr/local/opt/gnu-tar/libexec/gnubin:$PATH
     export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
     export MANPATH=/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH
+    export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home
 fi
 
 # Plugins

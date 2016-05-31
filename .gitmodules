@@ -55,3 +55,9 @@
 [submodule "vim/bundle/vim-surround"]
 	path = vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
+[submodule "vim/bundle/vim-bufsurf"]
+	path = vim/bundle/vim-bufsurf
+	url = https://github.com/ton/vim-bufsurf.git
+[submodule "vim/bundle/ctrlsf.vim"]
+	path = vim/bundle/ctrlsf.vim
+	url = https://github.com/dyng/ctrlsf.vim
