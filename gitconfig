@@ -23,6 +23,6 @@
 [core]
         eol = lf
         autocrlf = input
-        filemode = false
+	fileMode = false
         editor = vim
         excludesfile = ~/.gitignore_global

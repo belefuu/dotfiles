@@ -9,3 +9,6 @@
 .DS_Store?
 .Trashes
 Thumbs.db
+
+# Misc
+*c:/intellij/r11/VAN.Client/target/npm-package/resources/sas/van/messagebundle_en.properties
