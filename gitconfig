@@ -6,7 +6,7 @@
 [log]
         date = local
 [alias]
-        mylog = log --graph --decorate --all
+    mylog = log --graph --decorate --all
 
 	lg = log --pretty=format:'%C(auto)%h%C(reset) -%C(auto)%d%C(reset) %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)' --date=relative --graph
 
@@ -15,6 +15,9 @@
 	df = diff --color --color-words --abbrev
 
 	st = status -sb
+
+    recents = !git for-each-ref --sort=-committerdate refs/heads --format='%(HEAD)%(color:yellow)%(refname:short)|%(color:bold green)%(committerdate:relative)|%(color:blue)%(subject)|%(color:magenta)%(authorname)%(color:reset)'|column -ts'|'
+
 [merge]
         tool = vimdif
         renormalize = true
