@@ -9,7 +9,8 @@ export MANPATH=$HOME/share/man:$MANPATH
 export KEYTIMEOUT=1
 export FZF_DEFAULT_COMMAND='ag -l -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export VA_QUNIT_SERVER_URL=http://vadev.instance.openstack.com
+export GOPROXY=http://goproxy.sas.com:3000
+export GONOSUMDB=*.sas.com
 
 # OS dependent env variables
 
