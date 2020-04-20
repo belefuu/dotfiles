@@ -82,7 +82,7 @@ set hlsearch
 
 " Show tabs and eols
 set list
-set listchars=tab:▸\ ,eol:¬,space:.
+set listchars=tab:▸\ ,eol:$,space:.
 
 " Colors
 set background=dark
