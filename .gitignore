@@ -1,9 +1,3 @@
-# Dotbot install script
-install
-
-# Vim .swp files
-*.swp
-
 # Non-VCS Vim stuff
 vim/.netrwhist
 vim/bundle/fzf
