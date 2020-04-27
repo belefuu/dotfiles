@@ -9,12 +9,12 @@ antigen bundle sigurdga/ls-colors-solarized
 antigen bundle extract
 antigen bundle git-extras
 antigen bundle rupa/z
-
-antigen theme candy
+antigen bundle mafredri/zsh-async
+antigen bundle sindresorhus/pure
 
 antigen apply
 
 # dircolors
 if [[ "$(tput colors)" == "256" ]]; then
-    eval `dircolors ~/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-sigurdga-SLASH-ls-colors-solarized.git/dircolors`
+    eval `dircolors /Users/jolyna/.antigen/bundles/sigurdga/ls-colors-solarized/dircolors`
 fi
