@@ -34,3 +34,6 @@ source ~/.zsh/aliases.zsh
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# syntax highlighting, needs to be last
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
