@@ -1,7 +1,7 @@
 " Setup Pathogen
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
-syntax enable
+syntax on
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
@@ -81,14 +81,9 @@ endif
 set hlsearch
 
 " Show tabs and eols
-set list
-set listchars=eol:$,space:.
 
 " Colors
-set background=dark
-let g:solarized_visibility="low"
-let g:solarized_termcolors=256
-colorscheme solarized
+colorscheme base16-default-dark
 
 " Vim-javascript settings
 let g:javascript_enable_domhtmlcss=1

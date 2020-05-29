@@ -61,3 +61,9 @@
 [submodule "vim/bundle/ctrlsf.vim"]
 	path = vim/bundle/ctrlsf.vim
 	url = https://github.com/dyng/ctrlsf.vim
+[submodule "base16-vim"]
+	path = base16-vim
+	url = https://github.com/chriskempson/base16-vim
+[submodule "vim/bundle/base16-vim"]
+	path = vim/bundle/base16-vim
+	url = https://github.com/chriskempson/base16-vim
