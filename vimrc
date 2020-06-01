@@ -85,6 +85,11 @@ set hlsearch
 " Colors
 colorscheme base16-default-dark
 
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
+
 " Vim-javascript settings
 let g:javascript_enable_domhtmlcss=1
 " set conceallevel=2
