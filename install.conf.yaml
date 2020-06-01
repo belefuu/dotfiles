@@ -36,6 +36,9 @@
         path: tpm/
         force: true
         create: true
+    ~/.ideavimrc:
+        path: ideavimrc
+        force: true
 
 - create:
     - ~/.config

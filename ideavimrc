@@ -1,0 +1,19 @@
+let mapleader = " "
+
+set incsearch
+set surround
+set history=8192
+set hlsearch
+set ignorecase
+set smartcase
+set showmode
+set easymotion
+set multiple-cursors
+set commentary
+set ReplaceWithRegister
+set argtextobj
+set textobj-entire
+
+map ]c :action VcsShowNextChangeMarker<CR>
+map [c :action VcsShowPrevChangeMarker<CR>
+map <leader>e :action RecentFiles<CR>
