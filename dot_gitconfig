@@ -1,0 +1,37 @@
+[user]
+	name = Josh Lyna
+	email = Josh.Lyna@sas.com
+[color]
+        ui = auto
+[log]
+        date = local
+[alias]
+    mylog = log --graph --decorate --all
+
+	lg = log --pretty=format:'%C(auto)%h%C(reset) -%C(auto)%d%C(reset) %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)' --date=relative --graph
+
+	lga = log --pretty=format:'%C(auto)%h%C(reset) -%C(auto)%d%C(reset) %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)' --date=relative --graph --all
+	
+	df = diff --color --color-words --abbrev
+
+	st = status -sb
+
+    recents = !git for-each-ref --sort=-committerdate refs/heads --format='%(HEAD)%(color:yellow)%(refname:short)|%(color:bold green)%(committerdate:relative)|%(color:blue)%(subject)|%(color:magenta)%(authorname)%(color:reset)'|column -ts'|'
+
+[merge]
+        tool = vimdif
+        renormalize = true
+[mergetool]
+        keepBackup = false
+[core]
+        eol = lf
+        autocrlf = input
+	fileMode = false
+	editor = vim
+        excludesfile = ~/.gitignore_global
+[url "git@gitlab.sas.com:"]
+	insteadOf = https://gitlab.sas.com/
+[url "jolyna@gitlab.sas.com:"]
+	insteadOf = https://gitlab.sas.com/
+[fetch]
+	prune = true

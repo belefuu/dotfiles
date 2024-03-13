@@ -1,0 +1,69 @@
+# Initialize completion
+autoload -Uz compinit && compinit
+
+# Env variables
+
+export PATH=$HOME/bin:/usr/src/node/bin:/usr/src/git/bin:$PATH
+export EDITOR='vim'
+export MANPATH=$HOME/share/man:$MANPATH
+export KEYTIMEOUT=1
+export FZF_DEFAULT_COMMAND='ag -l -g ""'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export GOPROXY=http://goproxy.sas.com:3000
+export GONOSUMDB=*.sas.com
+export GROOVY_HOME=/usr/local/opt/groovy/libexec
+export PATH=$PATH:$GROOVY_HOME/bin
+export NVM_DIR=~/.nvm
+
+# OS dependent env variables
+
+if [[ $(uname) == 'Darwin' ]]; then
+    export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
+    export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
+    export PATH=/usr/local/opt/gnu-tar/libexec/gnubin:$PATH
+    export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
+    export MANPATH=/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH
+    export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
+fi
+
+# Plugins
+source ~/.zsh/plugins.zsh
+
+# Settings
+source ~/.zsh/settings.zsh
+
+# Aliases
+source ~/.zsh/aliases.zsh
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# NVM
+source $(brew --prefix nvm)/nvm.sh
+
+autoload -U add-zsh-hook
+
+load-nvmrc() {
+    local nvmrc_path
+    nvmrc_path="$(nvm_find_nvmrc)"
+
+    if [ -n "$nvmrc_path"  ]; then
+        local nvmrc_node_version
+        nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+        if [ "$nvmrc_node_version" = "N/A"  ]; then
+            nvm install
+        elif [ "$nvmrc_node_version" != "$(nvm version)"  ]; then
+            nvm use
+        fi
+    elif [ -n "$(PWD=$OLDPWD nvm_find_nvmrc)"  ] && [ "$(nvm version)" != "$(nvm version default)"  ]; then
+        echo "Reverting to nvm default version"
+        nvm use default
+    fi
+}
+
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
+
+# syntax highlighting, needs to be last
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
