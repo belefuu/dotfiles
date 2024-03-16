@@ -3,10 +3,14 @@ alias ls='ls --color=auto'
 alias la='ls -a --color=auto'
 alias ll='ls -lh --color=auto'
 
-export PATH=/home/jolyna/bin:/usr/src/node/bin:/usr/src/git/bin:$PATH
-export EDITOR='vim'
+export PATH=/usr/local/bin:/home/$USER/bin:/usr/src/node/bin:/usr/src/git/bin:$PATH
 
-eval "$(grunt --completion=bash)"
+if [[ $(uname) == 'Linux' ]]; then
+    # Add brew and brew packages to path on Linux
+    export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
+fi
+
+export EDITOR='vim'
 
 PS1='[\u@\h \W]\$ '
 

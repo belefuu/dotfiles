@@ -4,6 +4,7 @@ autoload -Uz compinit && compinit
 # Env variables
 
 export PATH=$HOME/bin:/usr/src/node/bin:/usr/src/git/bin:$PATH
+
 export EDITOR='vim'
 export MANPATH=$HOME/share/man:$MANPATH
 export KEYTIMEOUT=1
@@ -24,6 +25,11 @@ if [[ $(uname) == 'Darwin' ]]; then
     export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
     export MANPATH=/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH
     export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
+fi
+
+if [[ $(uname) == 'Linux' ]]; then
+    # Add brew and brew packages to path on Linux
+    export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
 fi
 
 # Plugins
@@ -66,4 +72,4 @@ add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
 # syntax highlighting, needs to be last
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
