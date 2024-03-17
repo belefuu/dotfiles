@@ -12,7 +12,7 @@ autoload -Uz compinit && compinit
 
 export PATH=$HOME/bin:/usr/src/node/bin:/usr/src/git/bin:$PATH
 
-export EDITOR='vim'
+export EDITOR='nvim'
 export MANPATH=$HOME/share/man:$MANPATH
 export KEYTIMEOUT=1
 export FZF_DEFAULT_COMMAND='ag -l -g ""'

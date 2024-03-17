@@ -10,7 +10,7 @@ if [[ $(uname) == 'Linux' ]]; then
     export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
 fi
 
-export EDITOR='vim'
+export EDITOR='nvim'
 
 PS1='[\u@\h \W]\$ '
 
