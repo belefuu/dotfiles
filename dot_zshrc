@@ -40,9 +40,7 @@ if [[ $(uname) == 'Linux' ]]; then
 fi
 
 # Plugins
-# source ~/.zsh/plugins.zsh
-source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
-antidote load
+source ~/.zsh/plugins.zsh
 
 # Settings
 source ~/.zsh/settings.zsh
