@@ -39,6 +39,9 @@ if [[ $(uname) == 'Linux' ]]; then
     export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
 fi
 
+# fzf
+eval "$(fzf --zsh)"
+
 # Plugins
 source ~/.zsh/plugins.zsh
 
@@ -47,9 +50,6 @@ source ~/.zsh/settings.zsh
 
 # Aliases
 source ~/.zsh/aliases.zsh
-
-# fzf
-eval "$(fzf --zsh)"
 
 # NVM
 source $(brew --prefix nvm)/nvm.sh

@@ -4,7 +4,7 @@ antidote load
 
 # dircolors
 if [[ "$(tput colors)" == "256" ]]; then
-    eval `dircolors $HOME/.cache/antidote/https-COLON--SLASH--SLASH-github.com-SLASH-sigurdga-SLASH-ls-colors-solarized/dircolors`
+    eval `dircolors $(antidote home)/https-COLON--SLASH--SLASH-github.com-SLASH-sigurdga-SLASH-ls-colors-solarized/dircolors`
 fi
 
 # Base16 Shell

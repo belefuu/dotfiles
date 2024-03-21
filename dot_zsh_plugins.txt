@@ -3,6 +3,7 @@ romkatv/powerlevel10k
 
 # Plugins
 rupa/z
+atuinsh/atuin
 
 # Just clone
 sigurdga/ls-colors-solarized kind:clone
