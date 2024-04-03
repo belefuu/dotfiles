@@ -19,20 +19,14 @@ export FZF_DEFAULT_COMMAND='ag -l -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export GOPROXY=http://goproxy.sas.com:3000
 export GONOSUMDB=*.sas.com
-export GROOVY_HOME=/usr/local/opt/groovy/libexec
-export PATH=$PATH:$GROOVY_HOME/bin
 export NVM_DIR=~/.nvm
 
 # OS dependent env variables
 
 if [[ $(uname) == 'Darwin' ]]; then
     export PATH=/opt/homebrew/bin:$PATH
-    export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
-    export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
-    export PATH=/usr/local/opt/gnu-tar/libexec/gnubin:$PATH
-    export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
-    export MANPATH=/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH
-    export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
+    export PATH=$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH
+    export MANPATH=$(brew --prefix)/opt/coreutils/libexec/gnuman:$MANPATH
 fi
 
 if [[ $(uname) == 'Linux' ]]; then
