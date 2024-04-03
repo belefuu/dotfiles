@@ -1,3 +1,5 @@
+tap "homebrew/cask-fonts"
+
 brew "chezmoi"
 brew "coreutils"
 brew "findutils"
