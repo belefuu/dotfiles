@@ -1,6 +1,7 @@
 [user]
 	name = Josh Lyna
 	email = Josh.Lyna@sas.com
+	signingkey = 442A0371AA5E7D87
 [color]
         ui = auto
 [log]
@@ -27,7 +28,7 @@
         eol = lf
         autocrlf = input
 	fileMode = false
-	editor = vim
+	editor = nvim
         excludesfile = ~/.gitignore_global
 [url "git@gitlab.sas.com:"]
 	insteadOf = https://gitlab.sas.com/
@@ -35,3 +36,7 @@
 	insteadOf = https://gitlab.sas.com/
 [fetch]
 	prune = true
+[commit]
+	gpgsign = true
+[tag]
+	gpgSign = true
