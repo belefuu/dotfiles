@@ -51,6 +51,9 @@ source ~/.zsh/settings.zsh
 # Aliases
 source ~/.zsh/aliases.zsh
 
+# Workbench
+source ~/.zsh/wb.zsh
+
 # NVM
 source $(brew --prefix nvm)/nvm.sh
 
