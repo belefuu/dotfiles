@@ -3,3 +3,6 @@ command = /opt/homebrew/bin/tmux new -A -s main
 
 # Option key sends Meta/Esc+ so Option+Enter et al. work (iTerm's "Esc+" equivalent)
 macos-option-as-alt = true
+
+# Persist preferred font size (one step below the 13pt default)
+font-size = 12
