@@ -10,8 +10,6 @@ autoload -Uz compinit && compinit
 
 # Env variables
 
-export PATH=$HOME/bin:/usr/src/node/bin:/usr/src/git/bin:$HOME/.local/bin:$PATH
-
 export EDITOR='nvim'
 export MANPATH=$HOME/share/man:$MANPATH
 export KEYTIMEOUT=1
@@ -33,6 +31,8 @@ if [[ $(uname) == 'Darwin' ]]; then
     [[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
 fi
 
+# Temp moved below /opt/homebrew/bin while testing ~/bin/packnplay
+export PATH=$HOME/bin:/usr/src/node/bin:/usr/src/git/bin:$HOME/.local/bin:$PATH
 
 if [[ $(uname) == 'Linux' ]]; then
     # Add brew and brew packages to path on Linux
