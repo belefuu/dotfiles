@@ -49,6 +49,7 @@
     status                  # exit code of the last command
     command_execution_time  # duration of the last command
     background_jobs         # presence of background jobs
+    gh_user                 # active gh account, warns on repo pin mismatch
     direnv                  # direnv status (https://direnv.net/)
     asdf                    # asdf version manager (https://github.com/asdf-vm/asdf)
     virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
@@ -1704,6 +1705,30 @@
   # User-defined prompt segments can be customized the same way as built-in segments.
   # typeset -g POWERLEVEL9K_EXAMPLE_FOREGROUND=208
   # typeset -g POWERLEVEL9K_EXAMPLE_VISUAL_IDENTIFIER_EXPANSION='⭐'
+
+  ##########################[ gh_user: active GitHub CLI account ]##########################
+  # Shows the active `gh` account (read from hosts.yml; `gh auth status` is ~340ms, too
+  # slow for a prompt) and warns when the current repo is pinned to a different account
+  # via credential.https://github.com.username.
+  # No instant_prompt_gh_user: output depends on cwd and gh state, which instant prompt
+  # forbids — a stale "all clear" is worse than a briefly absent segment.
+  function prompt_gh_user() {
+    local hosts=${GH_CONFIG_DIR:-$HOME/.config/gh}/hosts.yml line active
+    [[ -r $hosts ]] || return
+    while IFS= read -r line; do
+      [[ $line == *' user: '* ]] && { active=${line##* }; break }
+    done < $hosts
+    [[ -n $active ]] || return
+    local expected
+    expected=$(command git config --get credential.https://github.com.username 2>/dev/null)
+    if [[ -n $expected && $expected != $active ]]; then
+      p10k segment -b 1 -f 15 -i $'\uF09B' -t "$active ≠ $expected"
+    elif [[ -n $expected ]]; then
+      p10k segment -b 0 -f 76 -i $'\uF09B' -t $active
+    else
+      p10k segment -b 0 -f 244 -i $'\uF09B' -t $active
+    fi
+  }
 
   # Transient prompt works similarly to the builtin transient_rprompt option. It trims down prompt
   # when accepting a command line. Supported values:
