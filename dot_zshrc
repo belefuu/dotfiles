@@ -57,6 +57,9 @@ source ~/.zsh/wb.zsh
 # NVM
 source $(brew --prefix nvm)/nvm.sh
 
+# Worktrunk shell config
+command -v wt >/dev/null && eval "$(wt config shell init zsh)"
+
 autoload -U add-zsh-hook
 
 load-nvmrc() {
