@@ -1,0 +1,7 @@
+#!/bin/sh
+# Ghostty launches its command under a stripped environment (no ~/.zshrc), so the
+# tmux server would start without Homebrew on PATH. tpm and plugin scripts call
+# `tmux` by bare name, so they silently fail and no plugins load. Put Homebrew's
+# bin (and GNU coreutils) on PATH before starting the server so plugins load.
+export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+exec /opt/homebrew/bin/tmux new -A -s main

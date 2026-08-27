@@ -1,8 +1,11 @@
-# Auto-start tmux (attach-or-create), replacing continuum-boot's launchd hack
-command = /opt/homebrew/bin/tmux new -A -s main
+# Auto-start tmux via a wrapper that fixes PATH first, so tmux plugins load
+# (Ghostty's stripped launch env omits Homebrew, which breaks tpm)
+command = /Users/jolyna/.config/ghostty/start-tmux
 
 # Option key sends Meta/Esc+ so Option+Enter et al. work (iTerm's "Esc+" equivalent)
 macos-option-as-alt = true
 
 # Persist preferred font size (one step below the 13pt default)
 font-size = 12
+
+bell-features = system
