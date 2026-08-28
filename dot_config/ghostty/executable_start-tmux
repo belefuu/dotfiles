@@ -4,4 +4,7 @@
 # `tmux` by bare name, so they silently fail and no plugins load. Put Homebrew's
 # bin (and GNU coreutils) on PATH before starting the server so plugins load.
 export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
+# Attach-or-create `main`. On a fresh server this triggers tmux-continuum's restore,
+# which repopulates the saved session from the most recent autosave.
 exec /opt/homebrew/bin/tmux new -A -s main
