@@ -24,3 +24,10 @@ lgit() {
   echo "No .local-vcs found in parent directories" >&2
   return 1
 }
+
+# GlobalProtect VPN
+if [[ -e /Library/LaunchAgents/com.paloaltonetworks.gp.pangps.plist ]]; then
+  alias stop-globalprotect='launchctl unload /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*'
+  alias start-globalprotect='launchctl load /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*'
+  alias restart-globalprotect='stop-globalprotect && start-globalprotect'
+fi
